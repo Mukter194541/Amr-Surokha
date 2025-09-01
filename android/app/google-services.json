@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "994809557308",
+    "project_id": "safegurd-c6560",
+    "storage_bucket": "safegurd-c6560.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994809557308:android:54de090dd8defb659dae39",
+        "android_client_info": {
+          "package_name": "com.example.safegurd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiTkuyWOYcBSLS4qYzqKhwUgp1hsaM3HM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
