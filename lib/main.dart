@@ -37,6 +37,7 @@ class _HomeActivityState extends State<HomeActivity> {
     const HelpScreen(),
     const ProfileScreen(),
     const EmergencyContactScreen(),
+    const EmergencyBloodScreen(),
     Builder(builder: (context) => const EmergencyContactScreen()),
   ];
 
@@ -45,6 +46,7 @@ class _HomeActivityState extends State<HomeActivity> {
     "Help Center",
     "My Profile",
     "Emergency Contact",
+    "Emergency Blood"
   ];
 
   void _onItemTapped(int index) {
@@ -74,6 +76,8 @@ class _HomeActivityState extends State<HomeActivity> {
           BottomNavigationBarItem(icon: Icon(Icons.help), label: "Help"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.contact_emergency), label: "Contact"),
+          BottomNavigationBarItem(icon: Icon(Icons.bloodtype), label: "Blood"),
+
         ],
       ),
     );
@@ -99,5 +103,14 @@ class HelpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(child: Text('Help Screen'));
+  }
+}
+
+class EmergencyBloodScreen extends StatelessWidget {
+  const EmergencyBloodScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text('Blood Screen'));
   }
 }
