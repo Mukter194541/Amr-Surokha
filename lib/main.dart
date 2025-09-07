@@ -19,8 +19,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      // ✅ If user logged in → HomeActivity, else AuthPage
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: const Color(0xFF64D2A3),
+        scaffoldBackgroundColor: const Color(0xFF64D2A3),
+
+        appBarTheme: AppBarTheme(
+          backgroundColor: const Color(0xFF64D2A3),
+          foregroundColor: Colors.black,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.orangeAccent,
+        ),
+      ),
+
+
+
+
+
+
+      //  If user logged in → HomeActivity, else AuthPage
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
@@ -76,8 +94,8 @@ class _HomeActivityState extends State<HomeActivity> {
       appBar: AppBar(
         title: Text(_titles[_selectedIndex]),
         centerTitle: true,
-        backgroundColor: Colors.cyan,
-        elevation: 4,
+        //backgroundColor: Colors.cyan,
+        //elevation: 4,
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),

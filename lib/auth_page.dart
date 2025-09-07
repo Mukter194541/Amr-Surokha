@@ -22,7 +22,7 @@ class _AuthPageState extends State<AuthPage> {
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("❌ Sign In Error: $e")),
+        SnackBar(content: Text("Sign In Error")),
       );
     }
   }
@@ -31,7 +31,7 @@ class _AuthPageState extends State<AuthPage> {
     if (passwordController.text.trim() !=
         confirmPasswordController.text.trim()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("❌ Passwords do not match")),
+        const SnackBar(content: Text("Passwords do not match")),
       );
       return;
     }
@@ -43,7 +43,7 @@ class _AuthPageState extends State<AuthPage> {
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("❌ Sign Up Error: $e")),
+        SnackBar(content: Text("Sign Up Error")),
       );
     }
   }
@@ -51,7 +51,7 @@ class _AuthPageState extends State<AuthPage> {
   Future<void> resetPassword() async {
     if (emailController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("❌ Enter your email first")),
+        const SnackBar(content: Text("Enter your email first")),
       );
       return;
     }
@@ -63,7 +63,7 @@ class _AuthPageState extends State<AuthPage> {
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("❌ Error: $e")),
+        SnackBar(content: Text("Error")),
       );
     }
   }
