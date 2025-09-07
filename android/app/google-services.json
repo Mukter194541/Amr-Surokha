@@ -12,7 +12,12 @@
           "package_name": "com.example.safegurd"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "994809557308-ub6dbm0dmuaobnnitafjqpmtn191is1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDiTkuyWOYcBSLS4qYzqKhwUgp1hsaM3HM"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994809557308-ub6dbm0dmuaobnnitafjqpmtn191is1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

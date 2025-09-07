@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'location.dart';
 import 'contact.dart';
-
+import 'auth_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,9 +17,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeActivity(),
+      theme: ThemeData.light(),
+      // ✅ If user logged in → HomeActivity, else AuthPage
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          if (snapshot.hasData) {
+            return const HomeActivity(); // already logged in
+          }
+          return const AuthPage(); // show login/signup
+        },
+      ),
     );
   }
 }
@@ -63,6 +78,14 @@ class _HomeActivityState extends State<HomeActivity> {
         centerTitle: true,
         backgroundColor: Colors.cyan,
         elevation: 4,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+            },
+          )
+        ],
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -77,14 +100,11 @@ class _HomeActivityState extends State<HomeActivity> {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.contact_emergency), label: "Contact"),
           BottomNavigationBarItem(icon: Icon(Icons.bloodtype), label: "Blood"),
-
         ],
       ),
     );
   }
 }
-
-
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -94,8 +114,6 @@ class ProfileScreen extends StatelessWidget {
     return const Center(child: Text('Profile Screen'));
   }
 }
-
-
 
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
