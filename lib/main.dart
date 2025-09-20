@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'location.dart';
 import 'contact.dart';
 import 'auth_page.dart';
+import 'help.dart.';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -133,14 +134,14 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-class HelpScreen extends StatelessWidget {
+/*class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Center(child: Text('Help Screen'));
   }
-}
+}*/
 
 class EmergencyBloodScreen extends StatelessWidget {
   const EmergencyBloodScreen({super.key});
