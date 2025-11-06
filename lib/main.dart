@@ -6,6 +6,8 @@ import 'location.dart';
 import 'contact.dart';
 import 'auth_page.dart';
 import 'help.dart.';
+import 'blood.dart.';
+import 'profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -72,14 +74,14 @@ class _HomeActivityState extends State<HomeActivity> {
     const ProfileScreen(),
     const EmergencyContactScreen(),
     const EmergencyBloodScreen(),
-    Builder(builder: (context) => const EmergencyContactScreen()),
+    //Builder(builder: (context) => const EmergencyContactScreen()),
   ];
 
   final List<String> _titles = [
     "Incident Details",
     "Help Center",
     "My Profile",
-    "Emergency Contact",
+    "",
     "Emergency Blood"
   ];
 
@@ -92,8 +94,8 @@ class _HomeActivityState extends State<HomeActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_titles[_selectedIndex]),
+      /*appBar: AppBar(
+       // title: Text(_titles[_selectedIndex]),
         centerTitle: true,
         //backgroundColor: Colors.cyan,
         //elevation: 4,
@@ -105,7 +107,7 @@ class _HomeActivityState extends State<HomeActivity> {
             },
           )
         ],
-      ),
+      ),*/
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -125,29 +127,20 @@ class _HomeActivityState extends State<HomeActivity> {
   }
 }
 
-class ProfileScreen extends StatelessWidget {
+/*class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Center(child: Text('Profile Screen'));
   }
-}
-
-/*class HelpScreen extends StatelessWidget {
-  const HelpScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Help Screen'));
-  }
 }*/
 
-class EmergencyBloodScreen extends StatelessWidget {
+/*class EmergencyBloodScreen extends StatelessWidget {
   const EmergencyBloodScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Center(child: Text('Blood Screen'));
   }
-}
+}*/
