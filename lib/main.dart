@@ -8,6 +8,7 @@ import 'auth_page.dart';
 import 'help.dart.';
 import 'blood.dart.';
 import 'profile.dart';
+import 'predict_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,6 +71,7 @@ class _HomeActivityState extends State<HomeActivity> {
 
   final List<Widget> _pages = [
     const MapScreen(),
+    const PredictScreen(),
     const HelpScreen(),
     const ProfileScreen(),
     const EmergencyContactScreen(),
@@ -117,6 +119,7 @@ class _HomeActivityState extends State<HomeActivity> {
         showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.map), label: "Maps"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Predict"),
           BottomNavigationBarItem(icon: Icon(Icons.help), label: "Help"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.contact_emergency), label: "Contact"),
