@@ -27,7 +27,7 @@ class _MapScreenState extends State<MapScreen> {
   String? _predictionError;
 
   late final WeatherService _weatherService;
-  final String _apiBaseUrl = 'http://172.27.119.70:5000';
+  final String _apiBaseUrl = 'https://crime-api-q7w7.onrender.com';
 
   static const Color bg = Color(0xFFF5F7FB);
   static const Color card = Colors.white;

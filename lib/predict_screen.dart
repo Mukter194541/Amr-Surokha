@@ -31,7 +31,7 @@ class _PredictScreenState extends State<PredictScreen> {
   String _selectedAddress = "";
   bool _isLoadingLocation = false;
 
-  // ✅ control scroll when interacting with map
+  //  control scroll when interacting with map
   bool _mapInteracting = false;
 
   // Prediction state
@@ -45,7 +45,7 @@ class _PredictScreenState extends State<PredictScreen> {
   final Set<Marker> _markers = {};
 
   // Change this to your server URL
-  final String _apiBaseUrl = 'http://172.27.119.70:5000';
+  final String _apiBaseUrl = 'https://crime-api-q7w7.onrender.com';
 
   //  OpenWeather service
   late final WeatherService _weatherService;
@@ -92,7 +92,7 @@ class _PredictScreenState extends State<PredictScreen> {
   }
 
   String _prettyCrimeName(String k) {
-    if (k == 'ViolentCrime') return 'Violent Crime';
+    if (k == 'ViolentCrime') return 'Violent Crime(Assault,Rape)';
     if (k == 'murder') return 'Murder';
     if (k == 'bodyfound') return 'Body Found';
     return k;
